@@ -1,13 +1,13 @@
 const obtenerCarritoLS = () => JSON.parse(localStorage.getItem("carrito")) || []
 
-function pedirInfo(){
+function getArray(){
     fetch("./data.json")
     .then((response) => response.json())
     .then(productos => 
-        principal(listaProductos)
+        principal(productos)
     )
 }
-pedirInfo()
+getArray()
 
 
 function principal(productos) {
