@@ -1,15 +1,15 @@
-let listaProductos = [
-    { id: 1, name: "piggies", artist: "Matias Mirassou", coleccion: "ALine", stock: 10000, price: 10, rutaImagen: "piggies.mp4" },
-    { id: 2, name: "flamingos", artist: "Matias Mirassou", coleccion: "ALine", stock: 9997, price: 30, rutaImagen: "flamingos.mp4" },
-    { id: 3, name: "rubber ducks", artist: "Matias Mirassou", coleccion: "ALine", stock: 9998, price: 50, rutaImagen: "rubberducks.mp4" },
-    { id: 4, name: "desintegrate art", artist: "Decentral Artist", coleccion: "PArt", stock: 1000, price: 150, rutaImagen: "desintegratingart.mp4" },
-    { id: 5, name: "stoic art", artist: "Decentral Artist", coleccion: "PArt", stock: 998, price: 250, rutaImagen: "stoicart.mp4" },
-    { id: 6, name: "ethereal art", artist: "Decentral Artist", coleccion: "PArt", stock: 994, price: 350, rutaImagen: "etherealart.mp4" },
-];
-
 const obtenerCarritoLS = () => JSON.parse(localStorage.getItem("carrito")) || []
 
-principal(listaProductos)
+function pedirInfo(){
+    fetch("./data.json")
+    .then((response) => response.json())
+    .then(productos => 
+        principal(listaProductos)
+    )
+}
+pedirInfo()
+
+
 function principal(productos) {
     renderizarCarrito()
 
@@ -242,6 +242,3 @@ function eliminarProductoDelCarrito(e) {
         renderizarCarrito()
     }
 }
-
-
-
