@@ -18,28 +18,25 @@
 
 <body>
     <nav>
-        <div id="navbar">
+        <div id="navbar" class="container-fluid">
             <div>
                 <a href="">
                     <img src="./images/logo_navbar_color.png" alt="Logo" style="height: 80px;">
                 </a>
             </div>
-            <div id="navbar-center">
-                <button id="botonBuscar" class="btn btn-secondary">Buscar</button>
-                <form>
-                    <input id="inputBusqueda" type="search" placeholder="&#xF002; Buscar por nombre"
-                        style="font-family:Arial, FontAwesome">
+            <div id="navbar-center" class="d-flex align-items-center">
+                <form class="d-flex">
+                    <input id="inputBusqueda" placeholder="&#xF002; Buscar por nombre"  style="font-family:Arial, FontAwesome">
+                        <button id="botonBuscar" class="btn btn-secondary">Buscar</button>
                 </form>
             </div>
-            <div>
+            <div class="navbar-right">
                 <a id="mostarOcultar" href="#">
                     <h4>Ver Carrito</h4><i class="fas fa-shopping-cart"></i>
                 </a>
             </div>
         </div>
     </nav>
-
-
     <div id="botonesFiltros">
         <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
@@ -47,24 +44,21 @@
                 Filtrar por Artistas
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li class="dropdown-item botonFiltro" value="">Todos</li>
-                <li class="dropdown-item botonFiltro" value="Matias Mirassou">Matias Mirassou</li>
-                <li class="dropdown-item botonFiltro" value="Roger Kilimanjaro">Roger Kilimanjaro</li>
-                <li class="dropdown-item botonFiltro" value="Decentral Artist">Decentral Artist</li>
+                <li class="dropdown-item botonFiltro" data-value="">Todos</li>
+                <li class="dropdown-item botonFiltro" data-value="Matias Mirassou">Matias Mirassou</li>
+                <li class="dropdown-item botonFiltro" data-value="Roger Kilimanjaro">Roger Kilimanjaro</li>
+                <li class="dropdown-item botonFiltro" data-value="Decentral Artist">Decentral Artist</li>
             </ul>
         </div>
+        <!-- <button class="botonFiltro btn btn-secondary" value="">Todos</button>
+        <button class="botonFiltro btn btn-secondary" value="Matias Mirassou">Matias Mirassou</button>
+        <button class="botonFiltro btn btn-secondary" value="Roger Kilimanjaro">Roger Kilimanjaro</button>
+        <button class="botonFiltro btn btn-secondary" value="Decentral Artist">Decentral Artist</button> -->
     </div>
-
     <br>
-
-
-
     <div id="contenedorProductos" class="visible"></div>
-    <div id="contenedorCarrito" class="oculto">
-        <button id="botonComprar" class="btn btn-secondary">Comprar</button>
-    </div>
-
-    
+    <div id="contenedorCarrito" class="oculto">   </div>
+    <button id="botonComprar" class="btn btn-secondary oculto">Comprar</button>
 
     <footer class="container-fluid">
         <p class="followus">Follow Us</p>
@@ -85,7 +79,6 @@
     </footer>
 
     <script src="./scripts.js"></script>
-
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.0/dist/sweetalert2.all.min.js"></script>

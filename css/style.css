@@ -19,8 +19,9 @@
 
 body {
   background-color: #dfdfdf;
-
 }
+
+
 
 /* Estilos para Navbar */
 
@@ -38,24 +39,27 @@ nav {
   justify-content: space-between;
   padding: 0 20px;
   height: 80px;
-
-  form {
-    width: 100%;
-    max-width: 600px;
-  }
-
-  input[type="search"] {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 3px;
-
-  }
 }
 
-navbar-center {
-  display: inline-flex;
+#navbar .navbar-left, #navbar .navbar-right, #navbar #navbar-center {
+  display: flex;
   align-items: center;
+}
+
+#navbar #navbar-center {
+  flex-grow: 1;
+  justify-content: center;
+}
+
+#navbar #navbar-center form {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+}
+
+#navbar #inputBusqueda {
+  flex-grow: 1;
+  margin-right: 10px;
 }
 
 #navbar a {
@@ -63,12 +67,23 @@ navbar-center {
   color: #dfdfdf;
 }
 
-#inputBusqueda {
-  margin: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid black;
+#navbar .navbar-right a {
+  display: flex;
+  align-items: center;
 }
+
+#navbar .navbar-right a:hover {
+  color: #b77195;
+}
+
+  input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+
+  }
+
 
 /* Estilos para Body JS*/
 .subtitle {
@@ -85,31 +100,54 @@ navbar-center {
   padding: 10px;
   border-radius: 10px;
 }
+#contenedorProductos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-left: 15px;
+}
 
 .tarjetaProducto {
+  flex: 1 1 calc(20% - 20px);
+  max-width: 300px;
+  box-sizing: border-box;
   background-color: bisque;
   text-align: center;
   border: 1px solid black;
   border-radius: 10px;
-  margin: 20px;
-  padding: 5px;
+  margin: 10px 0;
+  padding: 10px;
+}
 
-  video {
-    width: 200px;
-  }
 
-  transition: all 0.3s ease;
+.tarjetaProducto video {
+  width: 250px;
+  height: auto;
+}
+
+.tarjetaProducto input{
+    width: 50px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #595957;
+    border-radius: 3px;
 }
 
 .tarjetaProducto:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 #contenedorCarrito {
   background-color: gray;
-  border: 2px solid black;
+  border-radius: 10px;
   width: 100%;
   min-height: 100px;
+  margin: 10px;
+  padding: 10px;
+}
+
+#botonComprar{
+  margin: 10px;
 }
 
 .tarjetaProductoCarrito {
@@ -128,8 +166,14 @@ h4 {
   margin: 0;
 }
 
+h6 {
+  color: #595957;
+  font-size: 60px;
+  margin: 20px;
+}
+
 .oculto {
-  display: none;
+  display: none !important;
 }
 
 .visible {
@@ -140,13 +184,6 @@ h4 {
 .visiblecont {
   display: block;
 }
-
-h6 {
-  color: #595957;
-  font-size: 60px;
-  margin: 20px;
-}
-
 
 /* Estilos para Footer */
 footer {

@@ -52,5 +52,32 @@
         "stock": 994,
         "price": 350,
         "rutaImagen": "etherealart.mp4"
+    },
+    {
+        "id": 7,
+        "name": "synthesizer",
+        "artist": "Roger Kilimanjaro",
+        "coleccion": "Roger",
+        "stock": 994,
+        "price": 400,
+        "rutaImagen": "synthesizer.mp4"
+    },
+    {
+        "id": 8,
+        "name": "gravity",
+        "artist": "Roger Kilimanjaro",
+        "coleccion": "Rogert",
+        "stock": 994,
+        "price": 500,
+        "rutaImagen": "gravity.mp4"
+    },
+    {
+        "id": 9,
+        "name": "twist",
+        "artist": "Roger Kilimanjaro",
+        "coleccion": "Roger",
+        "stock": 994,
+        "price": 600,
+        "rutaImagen": "twist.mp4"
     }
 ]

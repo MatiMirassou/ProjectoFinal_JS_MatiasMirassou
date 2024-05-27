@@ -29,19 +29,15 @@ function principal(productos) {
     botonComprar.addEventListener("click", finalizarCompra)
 
     let botonesFiltros = document.getElementsByClassName("botonFiltro")
-    for (const botonFiltro of botonesFiltros) {
+        for (const botonFiltro of botonesFiltros) {
         botonFiltro.addEventListener("click", (e) => filtrarYRenderizarProductosPorArtista(e, productos))
-
-        let dropdownMenu = document.querySelectorAll(".dropdown-menu.botonFiltro")
-        for (const dropdown of dropdownMenu) {
-            dropdown.addEventListener("click", (e) => filtrarYRenderizarProductosPorArtista(e, productos))
-        }
     }
 }
 
 function filtrarYRenderizarProductosPorArtista(e, productos) {
-    console.log(e.target.getAttribute("value"))
-    let productosFiltrados = productos.filter(producto => producto.artist.includes(e.target.getAttribute("value")))
+    console.log(e.target.getAttribute)
+    const artistName = e.target.getAttribute("data-value")
+    let productosFiltrados = productos.filter(producto => producto.artist.includes(artistName))
     renderizarProductos(productosFiltrados)
 }
 
@@ -61,18 +57,22 @@ function finalizarCompra() {
 function mostarOcultar(e) {
     let contenedorCarrito = document.getElementById("contenedorCarrito")
     let contenedorProductos = document.getElementById("contenedorProductos")
+    let botonComprar = document.getElementById("botonComprar")
 
-    //toggle
-    if (contenedorCarrito.classList.contains("oculto") || contenedorProductos.classList.contains("visible")) {
-        contenedorCarrito.classList.toggle("visiblecont")
+    if (contenedorCarrito.classList.contains("oculto") && botonComprar.classList.contains("oculto")  && contenedorProductos.classList.contains("visible")) {
         contenedorCarrito.classList.remove("oculto")
-        contenedorProductos.classList.toggle("oculto")
+        contenedorCarrito.classList.add("visiblecont")
+        botonComprar.classList.remove("oculto")
+        botonComprar.classList.add("visiblecont")
         contenedorProductos.classList.remove("visible")
+        contenedorProductos.classList.add("oculto")
     } else {
-        contenedorCarrito.classList.toggle("oculto")
         contenedorCarrito.classList.remove("visiblecont")
-        contenedorProductos.classList.toggle("visible")
+        contenedorCarrito.classList.add("oculto")
+        botonComprar.classList.remove("visiblecont")
+        botonComprar.classList.add("oculto")
         contenedorProductos.classList.remove("oculto")
+        contenedorProductos.classList.add("visible")
     }
 
     if (e.target.innerText === "Ver Carrito") {
@@ -94,14 +94,11 @@ function filtrarYRenderizar(productos) {
     renderizarProductos(productosFiltrados)
 }
 
-
-//Filtro de productos x value del input, con boton click e keypress
 function filtrarProducto(productos) {
     let inputBusqueda = document.getElementById("inputBusqueda")
     return productos.filter(producto => producto.name.includes(inputBusqueda.value))
 }
 
-//Creacion de Tarjetas
 function renderizarProductos(productos) {
     let contenedorProductos = document.getElementById("contenedorProductos")
     contenedorProductos.innerHTML = ""
@@ -113,7 +110,7 @@ function renderizarProductos(productos) {
         tarjetaProducto.innerHTML = `
         <div>
         <h3>${producto.name}</h3>
-        <video src="videos/${producto.rutaImagen}" autoplay width="200"></video>
+        <video src="videos/${producto.rutaImagen}" muted autoplay width="200"></video>
         <h4>precio: $${producto.price}</h4>
         <input type="number" id="cantidad${producto.id}" min="1" max="${producto.stock}" value="1">
         <button  class="btn btn-secondary" id=botonCarrito${producto.id}>Agregar al carrito</button>
