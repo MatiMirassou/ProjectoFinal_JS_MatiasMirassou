@@ -3,6 +3,7 @@
   font-family: "pixeled";
   src: url(../fonts/Pixeled.ttf);
 }
+
 @font-face {
   font-family: "dstype";
   src: url(../fonts/DSType.otf);
@@ -16,7 +17,13 @@
   font-family: dstype, Geneva, Tahoma, sans-serif;
 }
 
+body {
+  background-color: #dfdfdf;
+
+}
+
 /* Estilos para Navbar */
+
 nav {
   background-color: #333331;
   position: sticky;
@@ -31,6 +38,24 @@ nav {
   justify-content: space-between;
   padding: 0 20px;
   height: 80px;
+
+  form {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  input[type="search"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+
+  }
+}
+
+navbar-center {
+  display: inline-flex;
+  align-items: center;
 }
 
 #navbar a {
@@ -38,54 +63,90 @@ nav {
   color: #dfdfdf;
 }
 
-#navbar-left {
-  flex: 1;
-  display: flex;
-  align-items: center;
-}
-
-#navbar-center {
-  flex: 2;
-  display: flex;
-  justify-content: center;
-}
-
-#navbar-center form {
-  width: 100%;
-  max-width: 600px;
-}
-
-#navbar-center input[type="search"] {
-  width: 100%;
+#inputBusqueda {
+  margin: 10px;
   padding: 10px;
-  border: none;
-  border-radius: 3px;
+  border-radius: 10px;
+  border: 1px solid black;
 }
 
-#navbar-right {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-#navbar-right ul {
-  display: flex;
-  list-style: none;
-  margin-right: 20px;
-  margin-bottom: 0px;
-}
-
-
-#navbar-right ul li a {
-  font-size: 24px;
-  font-weight: 400;
+/* Estilos para Body JS*/
+.subtitle {
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  font-family: pixeled, Geneva, Tahoma, sans-serif;
+  margin-bottom: 50px;
   padding: 10px;
 }
 
-#navbar-right ul li a:hover {
-  color: #b77195;
+#botonesFiltros {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
 }
+
+.tarjetaProducto {
+  background-color: bisque;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 5px;
+
+  video {
+    width: 200px;
+  }
+
+  transition: all 0.3s ease;
+}
+
+.tarjetaProducto:hover {
+  transform: scale(1.1);
+}
+
+#contenedorCarrito {
+  background-color: gray;
+  border: 2px solid black;
+  width: 100%;
+  min-height: 100px;
+}
+
+.tarjetaProductoCarrito {
+  display: flex;
+  justify-content: space-between;
+  background-color: bisque;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+}
+
+h4 {
+  padding: 5px;
+  border: 0;
+  margin: 0;
+}
+
+.oculto {
+  display: none;
+}
+
+.visible {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.visiblecont {
+  display: block;
+}
+
+h6 {
+  color: #595957;
+  font-size: 60px;
+  margin: 20px;
+}
+
 
 /* Estilos para Footer */
 footer {
@@ -95,38 +156,46 @@ footer {
   display: block;
   text-align: center;
 }
+
 footer .followus {
   text-align: center;
   color: #dfdfdf;
   font-weight: 800;
 }
+
 footer ul {
   list-style: none;
   text-align: center;
   font-size: 18px;
   color: #dfdfdf;
 }
+
 footer ul a {
   color: inherit;
   text-decoration: none;
 }
+
 footer li {
   padding-right: 10px;
   padding-right: 10px;
   text-decoration: none;
 }
+
 footer div a {
   margin: 10px;
   font-size: 24px;
 }
+
 footer i {
   text-align: center;
   color: #dfdfdf;
   left: 300px;
 }
+
 footer i:hover {
   color: #b77195;
 }
+
 footer .copyright {
   margin-top: 15px;
   text-align: center;
@@ -139,96 +208,4 @@ footer .copyright {
   footer ul {
     font-size: 12px;
   }
-}
-
-/* Estilos para Body JS*/
-.subtitle{
-  color: white;
-  text-align: center;
-  font-size: 30px;
-  font-family: pixeled, Geneva, Tahoma, sans-serif;
-  margin-bottom: 50px;
-  padding: 10px;
-} 
-
-#botonesFiltros{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid black;
-  button{
-    margin: 10px;
-  }
-} 
-
-
-.tarjetaProducto{
-  background-color: bisque;
-  text-align: center;
-  border: 1px solid black;
-  border-radius: 10px;
-  margin: 15px;padding: 5px;
-  video{
-      width: 200px;
-  }
-  transition: all 0.3s ease;
-}
-
-.tarjetaProducto:hover{
-  transform: scale(1.1);
-}
-
-#contenedorCarrito{
-  background-color: gray;
-  border: 2px solid black;
-  width: 100%;
-  min-height: 100px;
-}
-
-
-
-
-.tarjetaProductoCarrito{
-  display: flex;
-  justify-content: space-between;
-  background-color: bisque;
-  border: 1px solid black;
-  border-radius: 10px;
-  margin: 5px;padding: 5px;
-  
-}
-
-h4{
-  padding: 5px;
-  border: 0;
-  margin: 0;
-}
-
-.oculto{
-  display: none;
-}
-
-.visible{
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.visiblecont{
-  display: block;
-}
-
-#inputBusqueda{
-  margin: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid black;
-}
-
-h6 {
-  color: #595957;
-  font-size: 60px;
-  margin: 20px;
 }
